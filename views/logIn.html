@@ -1,0 +1,28 @@
+<div class="contenedor-main">
+	<div id="form_container">
+		<div class="form_description">
+			<img src="<?= Views::img('logo.png') ?>" class="logo">
+		</div><br>
+
+		<div id="logInDiv">
+			<div id="li_1">
+				<label class="description">Usuario: </label>
+				<div>
+					<input id="usuarioLogIn" class="element text medium text-center" type="text" maxlength="255" placeholder="Ingrese aquí su usuario">
+					<small id="usuarioLogInError"> </small>
+				</div>
+			</div>
+
+			<div id="li_2" >
+				<label class="description">Contraseña: </label>
+				<div>
+					<input id="passwordLogIn" class="element text medium text-center" type="password" maxlength="255" placeholder="Ingrese aquí su contraseña">
+					<small id="passwordLogInError"> </small>
+				</div>
+			</div>
+		</div>
+		<button class="btn_enviar" id="botonLogIn">
+			<img src="<?= Views::img('iconentrar.png') ?>"> ENTRAR
+		</button>
+	</div>
+</div>

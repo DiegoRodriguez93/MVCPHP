@@ -1,0 +1,459 @@
+<div id="modalTomarPedido" class="w3-modal">
+	<div class="w3-modal-content">
+		<div class="w3-container">
+			<span onclick="$('#modalTomarPedido').css('display', 'none')" class="w3-button w3-display-topright">&times;</span>	
+			<div id="tablaTomaPedido"></div>
+		</div>
+	</div>
+</div>
+
+<div id="tomarPedidoDiv" class="tomarPedidoDivMostrarAuxiliar" style="display: block;">
+
+	<div id="contenedor-main-cedula" class="contenedor-main-cedula tomarPedidoDivMostrarAuxiliar" style="display: block">
+		<table>
+			<tr>
+				<td>
+					<h1>Cédula: </h1><br>
+					<input class="solo_numeros" id="tomarPedidoBuscarCedula" max="99999999" placeholder="Ingresar cédula">
+					<small id="tomarPedidoBuscarCedulaError" style="display: block" class="errormsj"> </small>
+					<input type="button" value="Buscar" id="tomarPedidoBuscarCedulaBoton" class="btn btn-primary mx-auto my-4 buscar">
+				</td>
+				<td>				
+					<td>
+					<h1>Nombre y/o Apellidos: </h1><br>
+					<input id="tomarPedidoBuscarNYA" style="width: 100%!important;" placeholder="Ingresar Nombres y/o Apellidos">
+
+					<small id="tomarPedidoBuscarNYAError" style="display: block" class="errormsj"> </small>
+					<input type="button" value="Buscar" id="tomarPedidoBuscarNYABoton" class="btn btn-primary mx-auto my-4 buscar">
+				</td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="tomarPedidoDetalles" class="contenedor-main-left ocultarAuxiliar" style="display: none;">
+		<table>
+			<tr>
+				<td>
+					<h1 style="vertical-align:middle;"><img src="<?= Views::img('reporting-blue.png') ?>"> Toma Pedido</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Nombre Socio: </span> <br>
+					<input id="tomarPedidoNombre" readonly>
+					<small id="tomarPedidoNombreError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cédula Socio:</span> <br>
+					<input id="tomarPedidoCedula" readonly>
+					<small id="tomarPedidoCedulaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Teléfono: </span> <br>
+					<input id="tomarPedidoTelefono" placeholder="Ingrese un teléfono" type="text" maxlength="19">
+					<small id="tomarPedidoTelefonoError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Tipo de Servicio: </span>
+					<select id="tomarPedidoTipoDeServicio">
+						<option value="Sanatorio">Sanatorio</option>
+						<option value="Convalecencia">Convalecencia</option>
+						<option value="Domicilio Especial">Domicilio Especial</option>
+						<option value="Reintegro">Reintegro</option>
+						<option value="Particular">Particular</option>
+					</select>
+					<small id="tomarPedidoTipoDeServicioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Lugar de internación:</span>
+					<select id="tomarPedidoLugarInternacion"></select>
+					<small id="tomarPedidoLugarInternacionError" style="display: block"> </small>
+				</td>
+				<td>
+					<span id="tomarPedidoDepartamentoSpan" style="display: none;">Departamento de lugar de Internación:</span>
+					<select id="tomarPedidoDepartamento" style="display: none;">
+					</select>
+					<small id="tomarPedidoDepartamentoError" style="display: block"> </small>
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<span>Sala: </span> <br>
+					<input id="tomarPedidoSala" type="text">
+					<small id="tomarPedidoSalaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cama: </span> <br>
+					<input id="tomarPedidoCama" type="text">
+					<small id="tomarPedidoCamaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Piso: </span> <br>
+					<input id="tomarPedidoPiso" type="text" class="solo_numeros">
+					<small id="tomarPedidoPisoError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Fecha de Inicio: </span> <br>
+					<input id="tomarPedidoFechaInicio" class="datepicker" type="text">
+					<small id="tomarPedidoFechaInicioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Hora de Inicio: </span>
+					<select id="tomarPedidoHoraInicio"></select>
+					<small id="tomarPedidoHoraInicioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Horas de Servicio: </span>
+					<select id="tomarPedidoHorasServicio">
+						<option value="0">Seleccione una cantidad</option>
+						<option value="8">8</option>
+						<option value="12">12</option>
+						<option value="16">16</option>
+						<option value="24">24</option>
+					</select>
+					<small id="tomarPedidoHorasServicioError" style="display: block"> </small>
+				</td>
+			</tr>
+		</table>
+		<span>Observaciones socio: </span> <br>
+		<textarea id="tomarPedidoObservaciones"></textarea>
+		<small id="tomarPedidoObservacionesError" style="display: block"> </small>
+		<button id="tomarPedidoCancelar" onclick="location.reload(true)" class="butonatras">
+			<img src="<?= Views::img('left.png') ?>"> <span>Cancelar</span>
+		</button>
+		<button id="tomarPedidoEnviar" class="butonadelante">
+			<span>Enviar </span> <img src="<?= Views::img('right.png') ?>">
+		</button>
+	</div>
+
+	<div id="tomarPedidoDetallesNoSocio" class="contenedor-main-left ocultarAuxiliar" style="display: none;">
+		<table>
+			<tr>
+				<td>
+					<h1 style="vertical-align:middle;"><img src="<?= Views::img('reporting-blue.png') ?>"> Toma Pedido</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Nombre: </span> <br>
+					<input id="tomarPedidoNombreNoSocio">
+					<small id="tomarPedidoNombreNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cédula:</span> <br>
+					<input id="tomarPedidoCedulaNoSocio" readonly>
+					<small id="tomarPedidoCedulaNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Teléfono: </span> <br>
+					<input id="tomarPedidoTelefonoNoSocio" placeholder="Ingrese un teléfono" type="text" maxlength="19">
+					<small id="tomarPedidoTelefonoNoSocioError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Lugar de internación:</span>
+					<select id="tomarPedidoLugarInternacionNoSocio"></select>
+					<small id="tomarPedidoLugarInternacionNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Tipo de Servicio: </span>
+					<select id="tomarPedidoTipoDeServicioNoSocio">
+						<option value="Sanatorio">Sanatorio</option>
+						<option value="Convalecencia">Convalecencia</option>
+						<option value="Domicilio Especial">Domicilio Especial</option>
+						<option value="Reintegro">Reintegro</option>
+						<option value="Particular">Particular</option>
+					</select>
+					<small id="tomarPedidoTipoDeServicioNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Horas de Servicio: </span>
+					<select id="tomarPedidoHorasServicioNoSocio">
+						<option value="0">Seleccione una cantidad</option>
+						<option value="8">8</option>
+						<option value="12">12</option>
+						<option value="16">16</option>
+						<option value="24">24</option>
+					</select>
+					<small id="tomarPedidoHorasServicioNoSocioError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Sala: </span> <br>
+					<input id="tomarPedidoSalaNoSocio" type="text">
+					<small id="tomarPedidoSalaNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cama: </span> <br>
+					<input id="tomarPedidoCamaNoSocio" type="text">
+					<small id="tomarPedidoCamaNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Piso: </span> <br>
+					<input id="tomarPedidoPisoNoSocio" type="text" class="solo_numeros">
+					<small id="tomarPedidoPisoNoSocioError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Fecha de Inicio: </span> <br>
+					<input id="tomarPedidoFechaInicioNoSocio" class="datepicker" type="text">
+					<small id="tomarPedidoFechaInicioNoSocioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Hora de Inicio: </span>
+					<select id="tomarPedidoHoraInicioNoSocio"></select>
+					<small id="tomarPedidoHoraInicioNoSocioError" style="display: block"> </small>
+				</td>
+			</tr>
+		</table>
+		<span>Observaciones: </span> <br>
+		<textarea id="tomarPedidoObservacionesNoSocio"></textarea>
+		<small id="tomarPedidoObservacionesNoSocioError" style="display: block"> </small>
+		<button id="tomarPedidoCancelarNoSocio" class="butonatras"">
+			<img src="<?= Views::img('left.png') ?>"> <span>Cancelar</span>
+		</button>
+		<button id="tomarPedidoEnviarNoSocio" class="butonadelante">
+			<span>Enviar </span> <img src="<?= Views::img('right.png') ?>">
+		</button>
+	</div>
+</div>
+
+<div class="contenedor-main-left-2 ocultarAuxiliar" id="tomarPedidoDetalles2" style="display:none;">
+	<br>
+	<div class="productosdiv scrolleablediv">
+		<p class="titulosderecha"> Productos</p>
+		<table>
+			<thead>
+				<tr style="text-align: center">
+					<th>Número:</th>
+					<th>Nombre:</th>
+					<th>Horas:</th>
+					<th>Fecha afiliación:</th>
+				</tr>
+			</thead>
+			<tbody id="tomaPedidoProductosTbody"></tbody>
+		</table>
+	</div>
+	<div class="cobranzadiv">
+		<p class="titulosderecha"> Cobranza</p>
+		<table>
+			<thead>
+				<tr style="text-align: center">
+					<th>Mes cobrado:</th>
+					<th>Estado:</th>
+				</tr>
+			</thead>
+			<tbody id="tomaPedidoCobranzasTbody"></tbody>
+		</table>
+	</div>
+	<div class="scrolleablediv">
+		<p class="titulosderecha"> Servicios</p>
+		<table>
+			<thead>
+				<tr style="text-align: center">
+					<th>Nro:</th>
+					<th>Desde:</th>
+					<th>Hasta:</th>
+					<th>Cantidad de días:</th>
+					<th>Turnos:</th>
+				</tr>
+			</thead>
+			<tbody id="tomaPedidoServiciosTbody"></tbody>
+		</table>
+	</div>
+</div>
+
+
+<div class="contenedor-main-left ocultarAuxiliar" style="display:none;" id="formularioReintegroDiv">
+	<h1 style="vertical-align:middle;">Solicitud de Reintegro</h1>
+	<table>
+		<tr>
+			<td>
+				<label for="formularioRegistroNroDeServicio">Número de Servicio:</label>
+				<input id="formularioRegistroNroDeServicio" type="text" readonly style="width:100px;">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="formularioRegistroFilial">Filial:</label>
+				<br>
+				<select id="formularioRegistroFilial"></select>
+			</td>
+			<td>
+				<label for="formularioRegistroNroDeSolicitud">Número de solicitud:</label>
+				<br>
+				<input id="formularioRegistroNroDeSolicitud" type="text" readonly placeholder="Campo autoincrementable">
+			</td>
+			<td>
+				<label for="formularioRegistroFechaDeSolicitud">Fecha de Solicitud:</label>
+				<br>
+				<input id="formularioRegistroFechaDeSolicitud" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="formularioRegistroNombreDelSocio">Nombre del socio:</label>
+				<br>
+				<input id="formularioRegistroNombreDelSocio" type="text" readonly>
+			</td>
+			<td>
+				<label for="formularioRegistroCedulaSocio">Cédula:</label>
+				<br>
+				<input id="formularioRegistroCedulaSocio" type="text" readonly>
+			</td>
+			<td>
+				<label for="formularioRegistroTelefonoSocio">Teléfono:</label>
+				<br>
+				<input id="formularioRegistroTelefono" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="formularioRegistroFechaDeAfiliacionSocio">Fecha de afiliación:</label>
+				<br>
+				<input id="formularioRegistroFechaDeAfiliacion" class="datepicker" type="text" readonly>
+			</td>
+			<td>
+				<label for="formularioRegistroHorasContratadasSocio">Horas Contratadas:</label>
+				<br>
+				<input id="formularioRegistroHorasContratadas" class="solo_numeros" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroTipoDeReintegroSocio">Tipo de reintegro solicitado:</label>
+				<br>
+				<input id="formularioRegistroTipoDeReintegro" type="text">
+			</td>
+		</tr>
+		<tr>
+		</tr>
+	</table>
+	<div class="divfull">
+		<label for="formularioRegistroPrimerComentario">Comentarios:</label>
+		<br>
+		<textarea id="formularioRegistroPrimerComentario" cols="30" rows="10"></textarea>
+	</div>
+	<table>
+		<tr>
+			<td>
+				<label for="formularioRegistroConstanciaDeInternacion">Constancia de internación:</label> 
+				<br>
+				<input id="formularioRegistroConstanciaDeInternacion" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroFechaDePresentacion">Fecha de presentación:</label> 
+				<br>
+				<input id="formularioRegistroFechaDePresentacion" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="formularioRegistroInternacionDesde">Internación desde:</label>
+				<br>
+				<input id="formularioRegistroInternacionDesde" type="text"></td>
+			<td>
+				<label for="formularioRegistroInternacionHasta">Internación hasta:</label>
+				<br>
+				<input id="formularioRegistroInternacionHasta" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroLugarDeInternacion">Lugar de internación:</label>
+				<br>
+				<input id="formularioRegistroLugarDeInternacion" type="text">
+			</td>
+		</tr>
+	</table>
+	<div class="divfull">
+		<label for="formularioRegistroSegundoComentarios">Comentarios:</label>
+		<br>
+		<textarea id="formularioRegistroSegundoComentarios" cols="30" rows="10"></textarea>
+	</div>
+	<table>
+		<tr>
+			<td>
+				<label for="formularioRegistroNombreDeLaCoordinadora">Nombre de la coordinadora:</label>
+				<br>
+				<input id="formularioRegistroNombreDeLaCoordinadora" type="text"></td>
+			<td>
+				<label for="formularioRegistroCedulaCoordinadora">Cédula Coordinadora:</label>
+				<br>
+				<input id="formularioRegistroCedulaCoordinadora" type="text"></td>
+			<td>
+				<label for="formularioRegistroFirmaCoordinadora">Firma Coordinadora:</label>
+				<br>
+				<input id="formularioRegistroFirmaCoordinadora" type="text"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h1 style="vertical-align:middle;">Datos a Completar por Dpto. de Calidad</h1>
+	<table>
+		<tr>
+			<td>
+				<label for="formularioRegistroDiasDeInternacion">Días de internación:</label>
+				<br>
+				<input id="formularioRegistroDiasDeInternacion" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroSegunSupervision">Según Supervisión:</label>
+				<br>
+				<input id="formularioRegistroSegunSupervision" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroMontoAReintegrar">Monto a reintegrar:</label>
+				<br>
+				<input id="formularioRegistroMontoAReintegrar" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td>Reintegro Número: <br><input type="text"></td>
+			<td>
+				<label for="formularioRegistroConstanciaDePagoRecibido">Constancia de pago Recibido:</label>
+				<br>
+				<select id="formularioRegistroConstanciaDePagoRecibido">
+					<option>Sí</option>
+					<option>No</option>
+				</select></td>
+			<td>
+				<label for="formularioRegistroNumeroDeConstanciaDePago">Nro. de Constancia de Pago:</label>
+				<input id="formularioRegistroNumeroDeConstanciaDePago" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="formularioRegistroFuncionarioDepartamentoDeCalidad">Funcionario Dpto. de Calidad:</label>
+				<br>
+				<input id="formularioRegistroFuncionarioDepartamentoDeCalidad" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroCedulaCalidad">Cédula:</label>
+				<br>
+				<input id="formularioRegistroCedulaCalidad" type="text">
+			</td>
+			<td>
+				<label for="formularioRegistroFirmaCalidad">Firma:</label>
+				<br>
+				<input id="formularioRegistroFirmaCalidad" type="text">
+			</td>
+		</tr>
+	</table>
+	<div style="height:1px; background:#fff; margin-bottom:10px; margin-top:10px;"></div>
+	<div style="width:100%; text-align:center;">
+		<button class="butonatras">
+			<img src="<?= Views::img('left.png') ?>">
+			<label for="">Cancelar</label>
+		</button>
+		<button class="butonadelante">
+			<label for="">Siguiente</label>
+			<img src="<?= Views::img('right.png') ?>">
+		</button>
+	</div>
+</div>

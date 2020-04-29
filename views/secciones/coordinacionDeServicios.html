@@ -1,0 +1,489 @@
+<div class="contenedor-main-left coordinacionDeServiciosDivMostrarAuxiliar" style="display: none; width: 85%!important;">
+
+	<div id="coordinacionDeServiciosBotones" class="ocultarAuxiliar">
+		<br><br>
+
+		<h1>Turnos:</h1>
+
+		<button class="pdayer pda-layer">
+			Pendientes de ayer<br>
+			<label class="badgegrandes badgeTurnosPendientesAyer">x</label>
+		</button>
+		<button class="pdahoy pda-layer">
+			Pendientes de <br>hoy<br>
+			<label class="badgegrandes badgeTurnosPendientesHoy">x</label>
+		</button>
+		<button class="pdmanana pda-layer">
+			Pendientes de mañana<br>
+			<label class="badgegrandes badgeTurnosPendientesManhana">x</label>
+		</button>
+		<br><br>
+		<h1>Servicios:</h1>
+
+		<button class="sinacompananteasignado pda-layer">
+			Sin acompañante asignado<br>
+			<label class="badgegrandes badgeServiciosSinAcompanhante">x</label>
+		</button>
+		<button class="serviciosactivospendientes pda-layer">
+			Activos pendientes<br>
+			<label class="badgegrandes badgeServiciosActivosPendientes">x</label>
+		</button>
+		<button class="serviciosactivoscompletos pda-layer">
+			Activos <br>completos<br>
+			<label class="badgegrandes badgeServiciosActivosCompletos">x</label>
+		</button>
+		<button class="todosLosServiciosActuales pda-layer">
+			Todos los servicios actuales<br>
+			<label class="badgegrandes badgeTodosLosServiciosActuales">x</label>
+		</button>
+		<br><br>
+		<h1>Acompañantes:</h1>
+
+		<input id="buscarAcompanhanteNavBarClon" type="text" class="solo_numeros" placeholder="Cédula de acompañante" style="width: 15%"> <input id="buscarAcompanhanteNavBarBotonClon" type="button" value="✔" class="buscar">
+
+		<br><br>
+
+		<h1>Clientes:</h1>
+
+		<input id="buscarClienteNavBarClon" type="text" class="solo_numeros" placeholder="Cédula de cliente" style="width: 15%"> <input id="buscarClienteNavBarBotonClon" type="button" value="✔" class="buscar">
+	</div>
+
+	<table id="coordinacionDeServiciosModificarDatosTable" class="ocultarAuxiliar">
+		<thead>
+			<th>ID</th>
+			<th>CI socio</th>
+			<th>Nombre socio</th>
+			<th>Observación</th>
+			<th>Fecha inicio</th>
+			<th>Hora inicio</th>
+			<th>Horas</th>
+			<th>Teléfono</th>
+			<th>Lugar</th>
+			<th>Piso</th>
+			<th>Sala</th>
+			<th>Cama</th>
+			<th>Servicio</th>
+			<th>Modificar</th>
+		</thead>
+		<tbody id="coordinacionDeServiciosModificarDatosTbody"></tbody>
+	</table>
+
+	<div id="coordinacionDeServiciosModificarDatosFinal" class="ocultarAuxiliar contenedor-main-left" style="width: 85%!important;">
+		<table>
+			<input type="hidden" name="" id="coordinacionDeServiciosModificarDatosFinalID">
+			<tr>
+				<td>
+					<span>Nombre Socio: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalNombre" readonly>
+					<small id="coordinacionDeServiciosModificarDatosFinalNombreError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cédula Socio:</span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalCedula" readonly>
+					<small id="coordinacionDeServiciosModificarDatosFinalCedulaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Teléfono: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalTelefono" placeholder="Ingrese un teléfono" type="text" maxlength="19">
+					<small id="coordinacionDeServiciosModificarDatosFinalTelefonoError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Lugar de internación:</span>
+					<select id="coordinacionDeServiciosModificarDatosFinalLugarInternacion"></select>
+					<small id="coordinacionDeServiciosModificarDatosFinalLugarInternacionError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Tipo de Servicio: </span>
+					<select id="coordinacionDeServiciosModificarDatosFinalTipoDeServicio">
+						<option value="Sanatorio">Sanatorio</option>
+						<option value="Convalecencia">Convalecencia</option>
+						<option value="Domicilio Especial">Domicilio Especial</option>
+						<option value="Reintegro">Reintegro</option>
+						<option value="Particular">Particular</option>
+					</select>
+					<small id="coordinacionDeServiciosModificarDatosFinalTipoDeServicioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Horas de Servicio: </span>
+					<select id="coordinacionDeServiciosModificarDatosFinalHorasServicio">
+						<option value="0">Seleccione un tipo de servicio</option>
+					</select>
+					<small id="coordinacionDeServiciosModificarDatosFinalHorasServicioError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Sala: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalSala" type="text">
+					<small id="coordinacionDeServiciosModificarDatosFinalSalaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Cama: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalCama" type="text">
+					<small id="coordinacionDeServiciosModificarDatosFinalCamaError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Piso: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalPiso" type="text" class="solo_numeros">
+					<small id="coordinacionDeServiciosModificarDatosFinalPisoError" style="display: block"> </small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Fecha de Inicio: </span> <br>
+					<input id="coordinacionDeServiciosModificarDatosFinalFechaInicio" class="datepicker" type="text" size="30">
+					<small id="coordinacionDeServiciosModificarDatosFinalFechaInicioError" style="display: block"> </small>
+				</td>
+				<td>
+					<span>Hora de Inicio: </span> <br>
+					<select id="coordinacionDeServiciosModificarDatosFinalHoraInicio"></select>
+					<small id="coordinacionDeServiciosModificarDatosFinalHoraInicioError" style="display: block"> </small>
+				</td>
+			</tr>
+		</table>
+
+		<span>Observaciones socio: </span> <br>
+		<textarea id="coordinacionDeServiciosModificarDatosFinalObservaciones"></textarea>
+		<small id="coordinacionDeServiciosModificarDatosFinalObservacionesError" style="display: block"> </small>
+		<button id="coordinacionDeServiciosModificarDatosFinalCancelar" class="butonatras">
+			<img src="<?= Views::img('left.png') ?>"> <span>No modificar</span>
+		</button>
+		<button id="coordinacionDeServiciosModificarDatosFinalEnviar" class="butonadelante">
+			<span>Actualizar </span> <img src="<?= Views::img('right.png') ?>">
+		</button>
+	</div>
+
+	<table id="coordinacionDeServiciosPendientesTable" class="ocultarAuxiliar"><br><br>
+		<thead>
+			<th>Turnos</th>
+			<th>Día</th>
+			<th>Acompañante T1</th>
+			<th>Cédula T1</th>
+			<th>Desde T1</th>
+			<th>Hasta T1</th>
+			<th>Acompañante T2</th>
+			<th>Cédula T2</th>
+			<th>Desde T2</th>
+			<th>Hasta T2</th>
+			<th>Acompañante T3</th>
+			<th>Cédula T3</th>
+			<th>Desde T3</th>
+			<th>Hasta T3</th>
+			<th>Ir al servicio</th>
+		</thead>
+		<tbody id="coordinacionDeServiciosPendientesTbody"></tbody>
+	</table>
+
+	<table id="coordinacionDeServiciosActivosTable" class="ocultarAuxiliar"><br><br>
+		<thead>
+			<th>ID</th>
+			<th>CI socio</th>
+			<th>Nombre socio</th>
+			<th>Observación</th>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Horas</th>
+			<th>Teléfono</th>
+			<th>Lugar</th>
+			<th>Piso</th>
+			<th>Sala</th>
+			<th>Cama</th>
+			<!-- <th>Acompañante</th> -->
+			<th>Fecha pedido</th>
+			<th>Hora pedido</th>
+			<th>Coordinar</th>
+		</thead>
+		<tbody id="coordinacionDeServiciosActivosTbody"></tbody>
+	</table>
+
+	<table id="coordinacionDeTodosLosServiciosActualesTable" class="ocultarAuxiliar"><br><br>
+		<thead>
+			<th>ID</th>
+			<th>CI socio</th>
+			<th>Nombre socio</th>
+			<th>Observación</th>
+			<th>Fecha</th>
+			<th>Lugar</th>
+			<th>Más info</th>
+		</thead>
+		<tbody id="coordinacionDeTodosLosServiciosActualesTbody"></tbody>
+	</table>
+
+	<div id="coordinacionDeServiciosAsignarAcompanhante" class="ocultarAuxiliar contenedor-main2"><br>
+		<h1 style="display: inline; padding: 0px;">Servicio nro: <label id="numeroDelServicioSeleccionado"></label></h1>
+		<table>
+			<tbody>
+				<td>
+					<div id="coordinacionDeServiciosAsignarAcompanhanteDiv" class="ocultarAuxiliar">
+							<h2 id="coordinacionDeServiciosAsignarAcompanhanteTitulo"></h2>
+							<input id="coordinacionDeServiciosAsignarAcompanhanteID" type="hidden">
+							<input id="coordinacionDeServiciosAsignarAcompanhanteReferencia" type="hidden">
+
+							<table>
+								<thead>
+									<th>
+										<label for="coordinacionDeServiciosAsignarAcompanhanteTurnos">Fecha a coordinar:</label>
+									</th>
+									<th>
+										<label for="coordinacionDeServiciosAsignarAcompanhanteTurnos">Cantidad de turnos:</label>
+									</th>
+								</thead>
+								<tbody>
+									<td>
+										<input type="text" id="coordinacionDeServiciosAsignarAcompanhanteFecha" class="datepicker" autocomplete="off" style="width: 30%;">
+										<small id="coordinacionDeServiciosAsignarAcompanhanteFechaError" style="display: block"> </small>
+									</td>
+									<td>
+										<select id="coordinacionDeServiciosAsignarAcompanhanteTurnos" style="width: 60%;">
+											<option value="0">Seleccione una opción</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+										<small id="coordinacionDeServiciosAsignarAcompanhanteTurnosError" style="display: block"> </small>
+									</td>
+								</tbody>
+							</table>
+				
+							<div id="turno1div" class="ocultarAuxiliar">
+								<h2>Turno 1:</h2>
+				
+								<table>
+									<thead>
+										<th style="width: 50%;">Nombre acompañante:</th>
+										<th style="width: 20%;">Cédula acompañante:</th>
+										<th style="width: 10%;">Desde:</th>
+										<th style="width: 10%;">Hasta:</th>
+										<th style="width: 10%;">Eliminar:</th>
+									</thead>
+									<tbody>
+										<td style="width: 50%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno1" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno1Error" style="display: block"> </small>
+										</td>
+										<td style="width: 20%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno1" class="solo_numeros" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno1Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno1"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno1Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno1"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno1Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<input type="button" value="X" onclick="Auxiliares.eliminarTurnoParticular(1)">
+										</td>
+									</tbody>
+								</table>
+							</div>
+				
+							<div id="turno2div" class="ocultarAuxiliar">
+								<h2>Turno 2:</h2>
+				
+								<table>
+									<thead>
+										<th style="width: 50%;">Nombre acompañante:</th>
+										<th style="width: 20%;">Cédula acompañante:</th>
+										<th style="width: 10%;">Desde:</th>
+										<th style="width: 10%;">Hasta:</th>
+										<th style="width: 10%;">Eliminar:</th>
+									</thead>
+									<tbody>
+										<td style="width: 50%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno2" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno2Error" style="display: block"> </small>
+										</td>
+										<td style="width: 20%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno2" class="solo_numeros" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno2Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno2"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno2Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno2"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno2Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<input type="button" value="X" onclick="Auxiliares.eliminarTurnoParticular(2)">
+										</td>
+									</tbody>
+								</table>
+							</div>
+				
+							<div id="turno3div" class="ocultarAuxiliar">
+								<h2>Turno 3:</h2>
+
+								<table>
+									<thead>
+										<th style="width: 50%;">Nombre acompañante:</th>
+										<th style="width: 20%;">Cédula acompañante:</th>
+										<th style="width: 10%;">Desde:</th>
+										<th style="width: 10%;">Hasta:</th>
+										<th style="width: 10%;">Eliminar:</th>
+									</thead>
+									<tbody>
+										<td style="width: 50%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno3" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteNombreTurno3Error" style="display: block"> </small>
+										</td>
+										<td style="width: 20%;">
+											<input id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno3" class="solo_numeros" type="text">
+											<small id="coordinacionDeServiciosAsignarAcompanhanteCedulaTurno3Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno3"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteDesdeTurno3Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<select id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno3"></select>
+											<small id="coordinacionDeServiciosAsignarAcompanhanteHastaTurno3Error" style="display: block"> </small>
+										</td>
+										<td style="width: 10%;">
+											<input type="button" value="X" onclick="Auxiliares.eliminarTurnoParticular(3)">
+										</td>
+									</tbody>
+								</table>
+							</div>
+				
+							<br>
+				
+								<input id="coordinacionDeServiciosAsignarAcompanhanteEnviar" type="button" value="Enviar" class="buscar">
+				
+								<br>
+								<br>
+								<hr>
+								<br>
+						</div>
+			
+						<input type="button" value="Ingresar nuevo día" id="coordinacionDeServiciosAsignarAcompanhanteNuevoRegistro" class="buscar">
+				</td>
+				<td><button class="btn btn-default" style="visibility: hidden"><h1 style="display: inline; padding: 0px;"></h1> </button>
+					<table>
+						<thead>
+							<th>Nombre:</th>
+							<th>Cédula:</th>
+							<th>Teléfono:</th>
+						</thead>
+						<tbody>
+							<td>
+								<input id="detallesDelServicioNombre" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioCedula" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioTelefono" readonly>
+							</td>
+						</tbody>
+					</table>
+					<table>
+						<thead>
+							<th>Localidad:</th>
+							<th>Lugar:</th>
+							<th>Tipo:</th>
+						</thead>
+						<tbody>
+							<td>
+								<input id="detallesDelServicioLocalidad" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioLugar" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioTipo" readonly>
+							</td>
+						</tbody>
+					</table>
+					<table>
+						<thead>
+							<th>Nro control:</th>
+							<th>Fecha:</th>
+							<th>Horas:</th>
+						</thead>
+						<tbody>
+							<td>
+								<input id="detallesDelServicioNroControl" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioFecha" readonly>
+							</td>
+							<td>
+								<input id="detallesDelServicioHoras" readonly>
+							</td>
+						</tbody>
+					</table>
+					<textarea id="detallesDelServicioObservacion" cols="30" rows="10" readonly></textarea>
+				</td>
+			</tbody>
+		</table>
+
+		<h2>Historial:</h2>
+		<br>
+
+		<p id="coordinacionDeServiciosAcompanhantesSinRegistros" class="ocultarAuxiliar">No hay pedidos anteriores.</p>
+
+		<table id="coordinacionDeServiciosAcompanhantesHistorialTable" class="ocultarAuxiliar">
+			<thead>
+				<th>Día:</th>
+				<th>Turnos:</th>
+				<th>Acompañante T1:</th>
+				<th>Cédula T1:</th>
+				<th>HI T1:</th>
+				<th>HF T1:</th>
+				<th>Acompañante T2:</th>
+				<th>Cédula T2:</th>
+				<th>HI T2:</th>
+				<th>HF T2:</th>
+				<th>Acompañante T3:</th>
+				<th>Cédula T3:</th>
+				<th>HI T3:</th>
+				<th>HF T3:</th>
+				<th>Modificar:</th>
+			</thead>
+			<tbody id="coordinacionDeServiciosAcompanhantesHistorialTbody"></tbody>
+		</table>
+	</div>
+
+	<div id="coordinacionDeServiciosAcompanhantesDiv" class="ocultarAuxiliar">
+		<div class="contenedor-main-left">
+			<h2><u>Información personal</u></h2>
+
+			<p><b>Nombre:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesNombre">
+			<p><b>Cédula:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesCedula">
+			<p><b>Fecha de nacimiento:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesNacimiento">
+			<p><b>Teléfono:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesTelefono">
+			<p><b>Departamento:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesDepartamento">
+			<p><b>Dirección:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesDireccion">
+		</div>
+		<div class="contenedor-main-left-2" style="top: 80px">
+			<h2><u>Información empleado</u></h2>
+
+			<p><b>Fecha de ingreso:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesIngreso">
+			<p><b>Ultimo día trabajado:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesUltimoDia">
+			<p><b>Servicio asignado para hoy:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesEnServicio">
+			<p><b>Servicio futuro:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesServicioFuturo">
+			<p><b>Horas mes:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesHorasMes">
+			<p><b>Horas totales:</b></p>
+			<input type="text" id="coordinacionDeServiciosAcompanhantesHorasTotales">
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,210 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+small
+{
+	display: block;
+	color: red;
+}
+
+.logo
+{
+	width: 250px;
+	animation-name: zoomin;
+	animation-duration: 2s;
+	position: relative;
+}
+
+body
+{
+	width: 100%;
+	font-family: 'Dosis', sans-serif;
+	background: url('../../views/images/background.jpg');
+	background-size: 60% auto;
+	background-repeat: no-repeat;
+}
+
+.contenedor-main
+{
+	width: 80%;
+	margin-left:10%;
+	text-align: center;
+	position: relative;
+	animation-name: totop;
+	animation-delay: 0s;
+	animation-duration: 2s;
+}
+
+input
+{
+	width: 80%;
+	max-width: 250px;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius:10px;
+	border: 1px solid #999;
+	margin-top:10px;
+	background: rgba(255,255,255,0.4);
+}
+
+.btn_enviar
+{
+	width: 250px;
+	height: 40px;
+	background: green;
+	color: #fff;
+	border: none;  
+	border-radius: 10px;
+	border-bottom: 1px solid #fff;
+	display: block;
+	margin: auto;
+}
+
+.btn_enviar:hover
+{
+	background: rgb(20, 182, 20);
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn_enviar img
+{
+	width: 13px;
+	vertical-align: middle;
+}
+
+footer
+{
+	margin-top:50px;
+}
+
+.botonesingreso
+{
+	width: 100%;
+	text-align: center;
+
+}
+
+/***** FADE IN *****/
+
+@keyframes fadein
+{
+	from
+	{
+		opacity:0;
+	}
+	to
+	{
+		opacity:1;
+	}
+}
+@-moz-keyframes fadein
+{
+	from
+	{
+		opacity:0;
+	}
+	to
+	{
+		opacity:1;
+	}
+}
+@-webkit-keyframes fadein
+{
+	from
+	{
+		opacity:0;
+	}
+	to
+	{
+		opacity:1;
+	}
+}
+@-o-keyframes fadein
+{
+	from
+	{
+		opacity:0;
+	}
+	to
+	{
+		opacity: 1;
+	}
+}
+
+/***** ZOOM *****/
+
+@keyframes zoomin
+{
+	0%
+{transform: scale(1.0);}
+	50%
+{transform: scale(1.1)}
+	100%
+{transform: scale(1.0)}
+}
+@-moz-keyframes zoomin
+{
+	0%
+{transform: scale(1.0);}
+	50%
+{transform: scale(1.1)}
+	100%
+{transform: scale(1.0)}
+}
+@-webkit-keyframes zoomin
+{ /* Safari and Chrome */
+	0%
+{transform: scale(1.0);}
+	50%
+{transform: scale(1.1)}
+	100%
+{transform: scale(1.0)}
+}
+@-o-keyframes zoomin
+{ /* Opera */
+	0%
+{transform: scale(1.0);}
+	50%
+{transform: scale(1.1)}
+	100%
+{transform: scale(1.0)}
+}
+
+/***** TO TOP *****/
+  
+@keyframes totop
+{
+	0%
+{top: -1000px}
+	85%{top:50px}
+	100%
+{top: 0};
+}
+@-moz-keyframes totop
+{
+	0%
+{top: -1000px}
+	85%{top:50px}
+	100%
+{top: 0}
+}
+@-webkit-keyframes totop
+{ /* Safari and Chrome */
+	0%
+{top: -1000px}
+	85%{top:50px}
+	100%
+{top: 0}
+}
+@-o-keyframes totop
+{ /* Opera */
+	0%
+{top: -1000px}
+	85%{top:50px}
+	100%
+{top: 0}
+}

@@ -1,0 +1,115 @@
+<header>
+
+	<div class="usuario" id="usuariobox">
+		<img src="<?= Views::img('iconuser.png'); ?>">
+		<span>Bienvenido: <b><?= $_SESSION['usuario'] ?></b></span>
+		<span >Sector actual: <b><label id="sectorActual">Toma pedido</label></b></span>
+
+			<button class="btnCerrarSesion" onclick="location.replace('cerrarSesion.php')">Cerrar Sesión</button>
+
+	</div>
+
+	<img src="<?= Views::img('isologo.png'); ?>" class="logoheader">
+
+	<div id="coordinacionDeServiciosDiv" class="mostrarAuxiliar" style="display: none;">
+		<ul class="nav">
+			<li>
+				<a id="coordinacionDeServiciosModificarDatos" class="modificardatos">MODIFICAR DATOS DEL TOMA PEDIDOS</a>
+			</li>
+			<li>
+				<a>TURNOS
+					<label class="badge zoomindos" id="badgeTurnosTotal">x</label>
+				</a>
+				<ul>
+					<li>
+						<a id="coordinacionDeServiciosPendientesAyer" class="pdayer">Pendientes de ayer
+							<label class="badge badgeTurnosPendientesAyer">x</label>
+						</a>
+					</li>
+					<li>
+						<a id="coordinacionDeServiciosPendientesHoy" class="pdahoy">Pendientes de hoy
+							<label class="badge badgeTurnosPendientesHoy">x</label>
+						</a>
+					</li>
+					<li>
+						<a id="coordinacionDeServiciosPendientesManhana" class="pdmanana">Pendientes de mañana
+							<label class="badge badgeTurnosPendientesManhana">x</label>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="badgeTurnosTotal">SERVICIOS
+					<label class="badge zoomindos" id="badgeServiciosTotal">x</label>
+				</a>
+				<ul>
+					<li>
+						<a id="coordinacionDeServiciosSinAcompanhante" class="sinacompananteasignado">Sin Acompañante Asignado
+							<label class="badge badgeServiciosSinAcompanhante">x</label>
+						</a>
+					</li>
+					<li>
+						<a id="coordinacionDeServiciosActivosPendientes" class="serviciosactivospendientes">Servicios Activos Pendientes
+							<label class="badge badgeServiciosActivosPendientes">x</label>
+						</a>
+					</li>
+					<li>
+						<a id="coordinacionDeServiciosActivosCompletos" class="serviciosactivoscompletos">Servicios Activos Completos
+							<label class="badge badgeServiciosActivosCompletos">x</label>
+						</a>
+					</li>
+					<li>
+						<a id="coordinacionDeTodosLosServiciosActuales" class="todosLosServiciosActuales">Todos los servicios
+							<label class="badge badgeTodosLosServiciosActuales">x</label>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="badgeTurnosTotal">ACOMPAÑANTE</a>
+				<ul>
+					<li>
+						<input id="buscarAcompanhanteNavBar" placeholder="ingresar cédula" class="solo_numeros" style="float: left; width: 80%;"> <input id="buscarAcompanhanteNavBarBoton" type="button" value="✔" style="width: 20%;">
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="serviciosbtn">CLIENTE</a>
+				<ul>
+					<li>
+						<input id="buscarClienteNavBar" placeholder="ingresar cédula" class="solo_numeros" style="float: left; width: 80%;"> <input id="buscarClienteNavBarBoton" type="button" value="✔" style="width: 20%;">
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div id="menuToggle">
+		<input type="checkbox" id="hamburguesa">
+		<span></span>
+		<span></span>
+		<span></span>
+		<ul id="menu" class="menu">
+			<a id="tomarPedidoBoton">
+				<li class="btn-tomapedido">
+					<img src="<?= Views::img('tickicon.png'); ?>">
+					<label class="texto-btn1" style="display:none">Toma Pedido</label>
+				</li>
+			</a>
+			<a id="coordinacionDeServiciosBoton">
+				<li class="btn-reportes">
+					<img src="<?= Views::img('reporting.png'); ?>">
+					<label class="texto-btn1" style="display:none">Coordinación de Servicios</label>
+				</li>
+			</a>
+			<a id="reportesBoton" style="display: none;">
+				<li class="btn-coordinacion">
+					<img src="<?= Views::img('iconcoordinacion.png'); ?>">
+					<label class="texto-btn1" style="display:none">Reportes</label>
+				</li>
+			</a>
+			<img src="<?= Views::img('isologo2.png'); ?>" class="logobarralateral" id="logolateral">
+		</ul>
+	</div>
+
+</header>
